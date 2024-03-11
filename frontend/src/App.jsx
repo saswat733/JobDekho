@@ -1,24 +1,25 @@
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter alias
-import './App.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Home/Hero';
-import HomeStats from './components/Home/HomeStats';
-import LogoSlider from './components/Home/LogoSlider';
-import Footer from './components/Home/Footer';
-import JobSeekers from './components/Home/JobSeekers';
-import HomeRecruiters from './components/Home/HomeRecruiters';
+import { useLocation } from "react-router-dom";
+import "./App.css";
+import Navbar from "./components/Navbar";
+
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
+
+  const location = useLocation();
+  const hideOnRoutes = ["/login", "/signup"];
+
+
   return (
-    <Router>
-      <Navbar />
-      <Hero/>
-      <HomeStats/>
-      <LogoSlider/>
-      <JobSeekers/>
-      <HomeRecruiters/>
-      <Footer/>
-    </Router>
+    <>
+      <div className="">
+        {!(
+          location.pathname.startsWith("/dashboard") ||
+          hideOnRoutes.includes(location.pathname)
+        ) && <Navbar />}
+        <AllRoutes />
+      </div>
+    </>
   );
 }
 

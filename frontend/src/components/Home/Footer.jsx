@@ -2,6 +2,7 @@ import React from "react";
 // import logo from "./assets/media/logo.png";
 function Footer() {
   return (
+    <>
     <div className="md:flex justify-between py-12 border-t border-gray-300  bg-white text-black ">
       <div className="md:w-2/5 ml-6 md:ml-20 flex flex-col gap-2 py-4 md:py-0">
         <img src={''} className="w-3/5 md:w-3/6" />
@@ -77,13 +78,14 @@ function Footer() {
             Privacy & Cookies
           </p>
         </div>
-        <div className="flex gap-4">
+      </div>
+    </div>
+        <div className="flex gap-4 text-center items-center justify-center">
 
            <p> made with love by saswat</p>
             <i class="fa-solid fa-heart"></i>
         </div>
-      </div>
-    </div>
+        </>
   );
 }
 

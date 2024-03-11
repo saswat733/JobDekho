@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom'
 
 const JobSeekers = () => {
   return (
-    <div className='bg-white px-8 text-black py-20'>
-        <div>
+    <div className='bg-white px-8 text-black py-20 md:flex'>
+        <div className='md:w-6/12'>
             <img src="https://job-hunter.noobnarayan.in/assets/happy-qmYJi4jH.svg" alt="img" />
         </div>
-        <div className="text-black flex flex-col gap-10 mt-10">
+        <div className='md:w-6/12 flex flex-col items-start gap-2 justify-center md:gap-4'>
+        <div className="text-black flex flex-col md:items-start gap-10 mt-10">
             <h2 className='text-xl font-semibold'>GOT TALENT?</h2>
             <h1 className='text-4xl font-bold font-sans'>Why job seekers love us</h1>
         </div>
-        <div className="flex flex-col gap-8 text-left">
+        <div className="flex flex-col md:items-start gap-8 text-left">
           <div className="flex items-center justify-center gap-4">
             <img src="https://assets-global.website-files.com/636dd759d71287e8ac7e6280/636dd759d71287fab77e63b3_Star.svg" />
             <p>
@@ -62,6 +63,7 @@ const JobSeekers = () => {
               Sign up now
             </button>
           </Link>
+        </div>
         </div>
     </div>
   )
