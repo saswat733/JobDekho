@@ -3,6 +3,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Home from '../Pages/Home'
 import Login from '../components/LoginSignUp/Login'
 import SignUp from '../components/LoginSignUp/SignUp';
+import Error from '../Pages/Error';
 function AllRoutes() {
   return (
     <div>
@@ -10,6 +11,7 @@ function AllRoutes() {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/*' element={<Error/>}/>
       </Routes>
     </div>
   )

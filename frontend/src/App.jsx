@@ -18,6 +18,7 @@ function App() {
           hideOnRoutes.includes(location.pathname)
         ) && <Navbar />}
         <AllRoutes />
+          
       </div>
     </>
   );
