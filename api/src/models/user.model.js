@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     email: { type: String, required: true, unique: true },
     role: { type: String, required: true },
     refreshToken: String,
+    userProfile:{type:mongoose.Schema.Types.Mixed},
 },
     {
         timestamps: true,
@@ -34,13 +35,13 @@ userSchema.methods.generateAccessToken=function(){
         username:this.username,
         fullname:this.fullname,
     },
-        proccess.env.ACCESS_TOKEN_SECRET,
+        process.env.ACCESS_TOKEN_SECRET,
     {
         expiresIn:process.env.ACCESS_TOKEN_EXPIRY
     }
     )
 }
-userSchema.generateRefreshToken=function(){
+userSchema.methods.generateRefreshToken=function(){
     return jwt.sign({
         _id:jwt._id,
     },

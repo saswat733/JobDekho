@@ -12,7 +12,12 @@ function SignUp() {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // Implement form submission logic here
+    const userData={
+      email,
+      password,
+      role:userType==="employer"?{companyName:name}:{name},
+      userProfile:userType==="employer"?{companyName:name}:{name}
+    }
   };
 
   return (
