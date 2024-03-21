@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, Navigate } from "react-router-dom";
+import axios from "axios";
 function SignUp() {
   const [userType, setUserType] = useState("jobSeeker");
   const [inputs, setInputs] = useState({
@@ -9,16 +9,33 @@ function SignUp() {
     password: "",
     confirmPassword: "",
   });
+  const [success, setsuccess] = useState(false)
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    const userData={
+  const handleSignUp = async (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    const { name, email, password } = inputs; // Destructure inputs object directly
+    
+    const userData = {
       email,
       password,
-      role:userType==="employer"?{companyName:name}:{name},
-      userProfile:userType==="employer"?{companyName:name}:{name}
+      role: userType === "employer" ? "employer" : "jobSeeker",
+      userProfile: userType === "employer" ? { companyName: name } : { name },
+    };
+
+    try {
+      const response = await axios.post('/api/v1/users/signup', userData); // Send POST request with userData
+      console.log(response);
+      setsuccess(true);
+      
+    } catch (error) {
+      console.log("error in signup", error);
     }
   };
+
+  if(success){
+    return <Navigate to={'/login'}/>
+  }
 
   return (
     <div className="h-screen">
