@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="pt-10 flex">
-      <div className="bg-[#E5E7EB]  md:w-6/12 text-black pt-10">
+      <div className="bg-[#E5E7EB] w-full md:w-6/12 text-black pt-10">
         <div className="ml-8 flex flex-col gap-4 md:gap-10">
           <h5 className="text-lg md:text-xl font-semibold">-/ Get Hired</h5>
           <div className="font-bold ">
@@ -44,7 +44,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#22C55E] w-6/12 hidden md:block">
+      <div className="bg-[#22C55E] md:w-6/12 hidden md:block">
         <img
           src="https://job-hunter.noobnarayan.in/assets/heroImage-vwiRALxP.png"
           alt="hands"

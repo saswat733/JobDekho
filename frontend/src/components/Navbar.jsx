@@ -28,7 +28,7 @@ const Navbar = () => {
   const activeStyle = "text-green-700 pb-4 border-b-2 border-green-700";
 
   return (
-    <div className="border-b w-full fixed top-0 left-0 md:h-16 font-Nunito z-50">
+    <div className="border-b-2 w-full fixed top-0 left-0 md:h-16 font-Nunito z-50">
     
         <div className="w-full fixed z-10 flex justify-between  bg-white">
           <div className="w-full md:w-fit  bg-white p-2 flex justify-between items-center">

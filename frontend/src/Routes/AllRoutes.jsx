@@ -5,6 +5,7 @@ import Login from '../components/LoginSignUp/Login'
 import SignUp from '../components/LoginSignUp/SignUp';
 import Error from '../Pages/Error';
 import UserOnboarding from '../components/LoginSignUp/UserOnboarding';
+import JobListing from '../Pages/JobListing';
 function AllRoutes() {
   return (
     <div>
@@ -14,6 +15,7 @@ function AllRoutes() {
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/home' element={<UserOnboarding/>}/>
         <Route path='/*' element={<Error/>}/>
+        <Route path='/jobs' element={<JobListing/>}/>
       </Routes>
     </div>
   )
